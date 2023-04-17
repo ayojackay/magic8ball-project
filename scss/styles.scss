@@ -1,0 +1,42 @@
+@use "mixins" as m;
+@use "constant" as c;
+body {
+    font-family: 'Vesper Libre', serif;
+    @include m.flex(column);
+    @include m.flexCenter;
+    background-color: c.$primary;
+}
+
+.heading {
+    font-family: 'IM Fell English SC', serif;
+}
+
+.parallax_effect {
+    @include m.parallaxEffect(center, 125%);
+}
+
+#hero_wrapper {
+    
+    height: 660px;
+    background-image: url("https://images.pexels.com/photos/2370726/pexels-photo-2370726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    
+    
+    @include m.psuedoElement($properties: ("background-color": rgba(0,0,0,0.5)));
+    .hero_wrapper-body {
+        color: #fff;
+        position: relative;
+        z-index: 1;
+        top: -10%;
+        @include m.inheritBoxSize;
+        @include m.flex(column);
+        @include m.flexCenter;
+    }
+}
+
+form input {
+    width: 520px !important;
+}
+#fortune_response-wrapper {
+    background-color: c.$secondary;
+    padding: c.$lg 0;
+}
